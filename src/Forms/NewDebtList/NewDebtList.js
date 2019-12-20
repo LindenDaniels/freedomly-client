@@ -6,12 +6,16 @@ import './NewDebtList.css';
  class NewDebtList extends React.Component {
     
     state = {
-        name: "",
-        items: "",
+        listName: "",
+        debtName: "",
+        debtAmount: "",
+        interestRate: "",
         id: "",
         formValid: false,
-        nameValid: false,
-        itemsValid: false,
+        listNameValid: false,
+        debtNameValid: false,
+        debtAmountValid: false,
+        interestRateValid: false,
         validationMessage: null
     }
 
@@ -40,7 +44,7 @@ updateFormEntry(e) {
 
         value = value.trim();
         
-        if ((name === 'name') || (name === 'items')) {
+        if ((name === 'listName') || (name === 'debtName') || (name === 'debtAmount') || (name === 'interestRate')) {
             if (value.length < 1) {
                 hasErrors = true
             } 
@@ -57,8 +61,8 @@ updateFormEntry(e) {
 
     formValid() {
         
-        const { nameValid, itemsValid } = this.state;
-        if (nameValid && itemsValid === true){
+        const { listNameValid, debtNameValid, debtAmountValid, interestRateValid } = this.state;
+        if (listNameValid && debtNameValid && debtAmountValid && interestRateValid === true) {
             this.setState({
                 formValid: true,
                 validationMessage: null
@@ -107,20 +111,22 @@ updateFormEntry(e) {
 
     handleSubmit(e) {
         e.preventDefault();
-        const { name, items, id } = this.state;
+        const { listName, debtName, debtAmount, debtInterestRate, id } = this.state;
         
-        const list = {
-            name: name,
-            items: items,
+        const debtList = {
+            listName: listName,
+            debtName: debtName,
+            debtAmount: debtAmount,
+            debtInterestRate: debtInterestRate,
             id: id
            
         }
         const STORE = this.props.store;
-        const groceryLists = this.props.store.groceryLists
+        const debtLists = this.props.store.debtLists
         
         
-        groceryLists.push(list);
-        this.props.history.push('/grocery-lists');
+        debtLists.push(debtList);
+        this.props.history.push('/debt-lists');
 
         this.setState({error: null})
     };
@@ -131,76 +137,66 @@ updateFormEntry(e) {
         return (
              <>
             <header>
-                <h1>Create Grocery List</h1>
+                <h1>Create Debt List</h1>
             </header>
             <section>
             <form 
-                className="creategrocerylist-form"
+                className="newdebtlist-form"
                 onSubmit={e => this.handleSubmit(e)}>
-                <h2 className="title">Grocery List</h2>
+                <h2 className="title">Debt List</h2>
                 <div className="form-section">
-                  <label htmlFor="name">Name</label>
+                  <label htmlFor="list-name">List Name</label>
                   <input 
                     type="text" 
                     className="field"
-                    name="name" 
-                    id="name" 
-                    aria-label="name"
+                    name="list-name" 
+                    id="list-name" 
+                    aria-label="list-name"
                     aria-required="true"
-                    placeholder="Saturday"
+                    placeholder="Student Loans"
+                    onChange={e => this.updateFormEntry(e)}
+                    />
+                </div>
+                <div className="form-section">
+                  <label htmlFor="debt-name">Debt Name</label>
+                  <input 
+                    type="text" 
+                    className="field"
+                    name="debt-name" 
+                    id="debt-name" 
+                    aria-label="debt-name"
+                    aria-required="true"
+                    placeholder="Sallie Mae"
+                    onChange={e => this.updateFormEntry(e)}
+                    />
+                </div>
+                <div className="form-section">
+                  <label htmlFor="debt-amount">Debt Amount</label>
+                  <input 
+                    type="number" 
+                    className="field"
+                    name="debt-amount" 
+                    id="debt-amount" 
+                    aria-label="debt-amount"
+                    aria-required="true"
+                    placeholder="Sallie Mae"
+                    onChange={e => this.updateFormEntry(e)}
+                    />
+                </div>
+                <div className="form-section">
+                  <label htmlFor="interest-rate">Interest Rate</label>
+                  <input 
+                    type="number" 
+                    className="field"
+                    name="interest-rate" 
+                    id="interest-rate" 
+                    aria-label="interest-rate"
+                    aria-required="true"
+                    placeholder="Sallie Mae"
                     onChange={e => this.updateFormEntry(e)}
                     />
                 </div>
 
-                
-                <div className="form-section">
-                  <label htmlFor="items">Items</label>
-                  <input 
-                    type="text" 
-                    className="grocerylist-items"
-                    name="items" 
-                    id="items" 
-                    aria-label="items"
-                    aria-required="true"
-                    placeholder="Almond Milk"
-                    onChange={e => this.updateFormEntry(e)}/>
-                    <input 
-                    type="text" 
-                    className="field"
-                    name="items" 
-                    id="items-1" 
-                    aria-label="items"
-                    aria-required="true"
-                    placeholder="Almond Milk"
-                    onChange={e => this.updateFormEntry(e)}/>
-                    <input 
-                    type="text" 
-                    className="field"
-                    name="items" 
-                    id="items-2" 
-                    aria-label="items"
-                    aria-required="true"
-                    placeholder="Almond Milk"
-                    onChange={e => this.updateFormEntry(e)}/>
-                    <input 
-                    type="text" 
-                    className="field"
-                    name="items" 
-                    id="items-3" 
-                    aria-label="items"
-                    aria-required="true"
-                    placeholder="Almond Milk"
-                    onChange={e => this.updateFormEntry(e)}/>
-                    <input 
-                    type="text" 
-                    className="field"
-                    name="items" 
-                    id="items-4" 
-                    aria-label="items"
-                    aria-required="true"
-                    placeholder="Almond Milk"
-                    onChange={e => this.updateFormEntry(e)}/>
-                </div>
                 <div className="buttons">
                  <button 
                     type="button" 

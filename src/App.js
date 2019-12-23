@@ -8,6 +8,7 @@ import NewFolder from './Forms/NewFolder/NewFolder';
 import './App.css';
 import CalculateFreedomDate from './Forms/CalculateFreedomDate/CalculateFreedomDate';
 import NewDebt from './Forms/NewDebt/NewDebt'
+import SignUpForm from './Forms/SignUpForm/SignUpForm'
 
 class App extends Component {
   static defaultProps = {
@@ -45,6 +46,13 @@ class App extends Component {
 <Route
             path='/new-debt'
             render={() => <NewDebt
+                           //store={STORE}
+            />}
+            />
+
+<Route
+            path='/signup-form'
+            render={() => <SignUpForm
                            //store={STORE}
             />}
             />

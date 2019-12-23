@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { Route, Link, withRouter} from 'react-router-dom';
 import NewDebtList from './Forms/NewDebtList/NewDebtList';
 import NewFolder from './Forms/NewFolder/NewFolder';
-//import STORE  from './STORE'
+import STORE  from './STORE'
 //import config from './config';
 import './App.css';
 import CalculateFreedomDate from './Forms/CalculateFreedomDate/CalculateFreedomDate';
@@ -29,46 +29,46 @@ class App extends Component {
         <Route
             exact path='/'
             render={() => <LandingPage
-                           //store={STORE}
+                           store={STORE}
             />}
           />
           <Route
             path='/freedom-date'
             render={() => <FreedomDate
-                           //store={STORE}
+                           store={STORE}
             />}
           />
           
           <Route
             path='/new-debt-list'
             render={() => <NewDebtList
-                           //store={STORE}
+                           store={STORE}
             />}
           />
           <Route
             path='/new-folder'
             render={() => <NewFolder
-                           //store={STORE}
+                           store={STORE}
             />}
             />
              <Route
             path='/new-freedom-date'
             render={() => <CalculateFreedomDate
-                           //store={STORE}
+                           store={STORE}
             />}
             />
 
 <Route
             path='/new-debt'
             render={() => <NewDebt
-                           //store={STORE}
+                           store={STORE}
             />}
             />
 
 <Route
             path='/signup-form'
             render={() => <SignUpForm
-                           //store={STORE}
+                           store={STORE}
             />}
             />
          

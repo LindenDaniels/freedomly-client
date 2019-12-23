@@ -122,11 +122,11 @@ updateFormEntry(e) {
            
         }
         const STORE = this.props.store;
-        const debtLists = this.props.store.debtLists
+        const folderId = this.props.store.folders.id
         
         
-        debtLists.push(debtList);
-        this.props.history.push('/debt-lists');
+        folderId.push(debtList);
+        this.props.history.push('/folder-list/:folderId');
 
         this.setState({error: null})
     };

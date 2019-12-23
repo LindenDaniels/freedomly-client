@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 import './NewFolder.css';
 
+
  class NewFolder extends React.Component {
     
     state = {
@@ -38,7 +39,7 @@ updateFormEntry(e) {
 
         value = value.trim();
         
-        if ((name === 'name') || (name === 'items')) {
+        if ((name === 'name')) {
             if (value.length < 1) {
                 hasErrors = true
             } 

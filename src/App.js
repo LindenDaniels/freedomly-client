@@ -11,6 +11,8 @@ import NewDebt from './Forms/NewDebt/NewDebt'
 import SignUpForm from './Forms/SignUpForm/SignUpForm'
 import LandingPage from './Landings/Landing/Landing';
 import FreedomDate from './FreedomDate/FreedomDate';
+import FolderList from './Lists/FolderList/FolderList';
+import NavBar from './NavBar/NavBar'
 
 class App extends Component {
   static defaultProps = {
@@ -26,6 +28,7 @@ class App extends Component {
      
     
         <div className='content' aria-live='polite'>
+          <NavBar />
         <Route
             exact path='/'
             render={() => <LandingPage
@@ -68,6 +71,12 @@ class App extends Component {
 <Route
             path='/signup-form'
             render={() => <SignUpForm
+                           store={STORE}
+            />}
+            />
+               <Route
+            path='/folder-list'
+            render={() => <FolderList
                            store={STORE}
             />}
             />

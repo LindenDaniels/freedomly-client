@@ -1,0 +1,26 @@
+.NavBar,
+footer {
+  padding: 1% 0;
+  background-color: #aaa;
+}
+
+.NavBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+
+.nav-link {
+    margin-right: 15px
+}
+
+body {
+    font-family: "Open Sans",
+    sans-serif;
+    font-size: 20px;
+    color: #444;
+    text-align: center;
+    line-height: 1.5;
+  }

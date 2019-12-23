@@ -20,7 +20,7 @@ export default function UserLanding(props) {
         <header>
             <h3>Your Freedom Date</h3>
         </header>
-        <p>[<em>placeholder for user/'s freedom date</em>]</p>
+        <p>[<em>placeholder for user's freedom date</em>]</p>
       </section>
       <section className="logout-form">
       <p>[<em>placeholder for logout form</em>]</p>

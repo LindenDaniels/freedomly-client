@@ -10,6 +10,7 @@ import CalculateFreedomDate from './Forms/CalculateFreedomDate/CalculateFreedomD
 import NewDebt from './Forms/NewDebt/NewDebt'
 import SignUpForm from './Forms/SignUpForm/SignUpForm'
 import LandingPage from './Landings/Landing/Landing';
+import FreedomDate from './FreedomDate/FreedomDate';
 
 class App extends Component {
   static defaultProps = {
@@ -26,8 +27,14 @@ class App extends Component {
     
         <div className='content' aria-live='polite'>
         <Route
-            path='/'
+            exact path='/'
             render={() => <LandingPage
+                           //store={STORE}
+            />}
+          />
+          <Route
+            path='/freedom-date'
+            render={() => <FreedomDate
                            //store={STORE}
             />}
           />

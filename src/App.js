@@ -13,6 +13,7 @@ import LandingPage from './Landings/Landing/Landing';
 import FreedomDate from './FreedomDate/FreedomDate';
 import FolderList from './Lists/FolderList/FolderList';
 import NavBar from './NavBar/NavBar'
+import DebtList from './Lists/DebtList/DebtList'
 
 class App extends Component {
   static defaultProps = {
@@ -80,7 +81,12 @@ class App extends Component {
                            store={STORE}
             />}
             />
-         
+          <Route
+            exact path='/folder/:folderId'
+            render={() => <DebtList
+                           store={STORE}
+            />}
+          />
         </div>
       </div>
       

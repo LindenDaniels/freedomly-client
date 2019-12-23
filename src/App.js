@@ -6,6 +6,7 @@ import NewFolder from './Forms/NewFolder/NewFolder';
 //import STORE  from './STORE'
 //import config from './config';
 import './App.css';
+import CalculateFreedomDate from './Forms/CalculateFreedomDate/CalculateFreedomDate';
 
 class App extends Component {
   static defaultProps = {
@@ -30,6 +31,12 @@ class App extends Component {
           <Route
             path='/new-folder'
             render={() => <NewFolder
+                           //store={STORE}
+            />}
+            />
+             <Route
+            path='/new-freedom-date'
+            render={() => <CalculateFreedomDate
                            //store={STORE}
             />}
             />

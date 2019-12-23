@@ -9,6 +9,7 @@ import './App.css';
 import CalculateFreedomDate from './Forms/CalculateFreedomDate/CalculateFreedomDate';
 import NewDebt from './Forms/NewDebt/NewDebt'
 import SignUpForm from './Forms/SignUpForm/SignUpForm'
+import LandingPage from './Landings/Landing/Landing';
 
 class App extends Component {
   static defaultProps = {
@@ -24,6 +25,13 @@ class App extends Component {
      
     
         <div className='content' aria-live='polite'>
+        <Route
+            path='/'
+            render={() => <LandingPage
+                           //store={STORE}
+            />}
+          />
+          
           <Route
             path='/new-debt-list'
             render={() => <NewDebtList

@@ -1,12 +1,9 @@
 import React from 'react';
-import './LandingPage.css';
-import SignUpForm from '../Forms/SignUpForm/SignUpForm';
+import './Landing.css';
+import SignUpForm from '../../Forms/SignUpForm/SignUpForm';
 export default function LandingPage(props) {
     return (
- 
   <>
-    
-    
     <section className = "landing">
       <header className="landing-header">
         <h1>Freedomly</h1>
@@ -28,11 +25,9 @@ export default function LandingPage(props) {
         <p>Get a debt-free date that updates as you add or remove debts. The debt free date is based on your monthly payment amount and whether you chose the snowball or avalanche method.</p>
       </section>
       <section className="landing-signup">
-        <header>
-            <h3>Ready to be debt free?</h3>
-        </header>
-      </section>
       <SignUpForm />
+      </section>
+      
       
    
     <footer role="content-info">Footer</footer>

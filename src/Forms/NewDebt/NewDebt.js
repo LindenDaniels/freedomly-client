@@ -12,6 +12,7 @@ import './NewDebt.css';
         interestRate: "",
         folders: "",
         folderId: "",
+        debtId: "",
         id: "",
         formValid: false,
         debtFolderValid: false,
@@ -25,7 +26,8 @@ updateFormEntry(e) {
         const name = e.target.name;
         const value = e.target.value;
         
-        const id = Math.floor(Math.random() * 100) + 5;
+        const debtId = Math.floor(Math.random() * 100) + 5;
+        let id = Math.floor(Math.random() * 100) + 5;
         
         
         if (e.target.selectedOptions) {

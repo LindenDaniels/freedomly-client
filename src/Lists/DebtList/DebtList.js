@@ -31,20 +31,21 @@ export default class DebtList extends Component {
         </header>
       <section className='DebtList'>
         <ul id="debts__list">
-          {folders.debts.map((debt) =>
+            {folders.map(folder =>
+          {folder.debts.map((debt) =>
           <li>
           {debt.debtName}
           {debt.debtAmount}
           {debt.interestRate}
           
-          }
+          
             </li>
-          )}
+            )})}
         </ul>
       </section>
       </>
-    )
-  }
+    
+          )}
 
 }
 

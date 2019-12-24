@@ -28,12 +28,12 @@ updateFormEntry(e) {
         const id = Math.floor(Math.random() * 100) + 5;
         
         
-        /*if (e.target.selectedOptions) {
+        if (e.target.selectedOptions) {
             id = e.target.selectedOptions[0].id;
             this.setState({
                 'folderId': id 
             })
-        }*/
+        }
         this.setState({
             [e.target.name]: e.target.value,
             id: id
@@ -125,7 +125,7 @@ updateFormEntry(e) {
         }
         const STORE = this.props.store;
         const folders = this.state.folders;
-        const folderId = this.state.folders.id
+        const folderId = this.state.folderId
 
 
         //const debtFolder = this.props.store.debtFolder

@@ -22,8 +22,8 @@ export default class DebtList extends Component {
         //const { recipe =[] } = this.context
         //const notesForFolder = getNotesForFolder(notes, folderId)
 
-        const folders = this.props.store.folders
-        const id = this.props.store.folders.filter(folder => +folder.id === +this.props.match.params.folderId)
+        //const folders = this.props.store.folders
+        const folders = this.props.store.folders.filter(folder => +folder.id === +this.props.match.params.folderId)
         console.log(this.props.match.params)
         return (
 

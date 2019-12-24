@@ -17,9 +17,9 @@ export default {
           name: 'Car Loans',
           debts: [ {
               
-            debtName: 'Sallie Mae',
-            debtAmount: '$3000',
-            debtInterest: '15%'
+            debtName: 'Subaru',
+            debtAmount: '$23000',
+            debtInterest: '10%'
         }
         ]
         },
@@ -28,9 +28,9 @@ export default {
           name: 'Credit Cards',
           debts: [ {
               
-            debtName: 'Sallie Mae',
-            debtAmount: '$3000',
-            debtInterest: '15%'
+            debtName: 'Discover Card',
+            debtAmount: '$1000',
+            debtInterest: '5%'
         }
         ]
         },

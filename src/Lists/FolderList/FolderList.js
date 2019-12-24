@@ -30,7 +30,7 @@ export default class FolderList extends Component {
             <h1>Folder List</h1>
         </header>
       <section className='FolderList'>
-        <ul id="rfolder__list">
+        <ul id="folder__list">
           {folders.map(folder => 
             <li key={folder.id}>
                 <NavLink

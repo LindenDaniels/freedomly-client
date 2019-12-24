@@ -19,11 +19,11 @@ export default class DebtList extends Component {
   //static contextType = GroceryContext;
 
   render() {
-    //const { folderId } = this.props.match.params
     //const { recipe =[] } = this.context
     //const notesForFolder = getNotesForFolder(notes, folderId)
 
     const folders = this.props.store.folders
+    const id = this.props.store.folders.filter(folder => +folder.id === +this.props.match.params.folder.id )
     return (
         <>
         <header>
@@ -32,7 +32,7 @@ export default class DebtList extends Component {
       <section className='DebtList'>
         <ul id="debts__list">
             {folders.map(folder =>
-          {folder.debts.map((debt) =>
+          { return folder.debts.map((debt) =>
           <li>
           {debt.debtName}
           {debt.debtAmount}

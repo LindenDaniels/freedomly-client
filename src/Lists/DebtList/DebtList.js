@@ -10,46 +10,50 @@ import './DebtList.css'
 
 
 export default class DebtList extends Component {
-  static defaultProps = {
-    match: {
-      params: {}
+    static defaultProps = {
+        match: {
+            params: {}
+        }
     }
-  }
 
-  //static contextType = GroceryContext;
+    //static contextType = GroceryContext;
 
-  render() {
-    //const { recipe =[] } = this.context
-    //const notesForFolder = getNotesForFolder(notes, folderId)
+    render() {
+        //const { recipe =[] } = this.context
+        //const notesForFolder = getNotesForFolder(notes, folderId)
 
-    const folders = this.props.store.folders
-    const id = this.props.store.folders.filter(folder => +folder.id === +this.props.match.params.folder.id )
-    return (
-        <>
-        <header>
-            <h1>Debt List</h1>
-        </header>
-      <section className='DebtList'>
-        <ul id="debts__list">
-            {folders.map(folder =>
-          { return folder.debts.map((debt) =>
-          <li>
-          {debt.debtName}
-          {debt.debtAmount}
-          {debt.interestRate}
-          
-          
-            </li>
-            )})}
-        </ul>
-      </section>
-      </>
-    
-          )}
+        const folders = this.props.store.folders
+        const id = this.props.store.folders.filter(folder => +folder.id === +this.props.match.params.folderId)
+        console.log(this.props.match.params)
+        return (
+
+            <>
+                <header>
+                    <h1>Debt List</h1>
+                </header>
+                <section className='DebtList'>
+                    <ul id="debts__list">
+                        {folders.map(folder => {
+                            return folder.debts.map((debt) =>
+                                <li>
+                                    {debt.debtName}
+                                    {debt.debtAmount}
+                                    {debt.interestRate}
+
+
+                                </li>
+                            )
+                        })}
+                    </ul>
+                </section>
+            </>
+
+        )
+    }
 
 }
 
 
 DebtList.propType = {
-  match: PropTypes.object.isRequired
+    match: PropTypes.object.isRequired
 };

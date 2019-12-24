@@ -12,7 +12,7 @@ import './NewDebt.css';
         interestRate: "",
         id: "",
         formValid: false,
-        listNameValid: false,
+        debtFolderValid: false,
         debtNameValid: false,
         debtAmountValid: false,
         interestRateValid: false,
@@ -111,13 +111,13 @@ updateFormEntry(e) {
 
     handleSubmit(e) {
         e.preventDefault();
-        const { debtFolder, debtName, debtAmount, debtInterestRate, id } = this.state;
+        const { debtFolder, debtName, debtAmount, interestRate, id } = this.state;
         
         const newDebt = {
             debtFolder: debtFolder,
             debtName: debtName,
             debtAmount: debtAmount,
-            debtInterestRate: debtInterestRate,
+            interestRate: interestRate,
             id: id
            
         }

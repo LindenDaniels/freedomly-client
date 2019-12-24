@@ -122,17 +122,32 @@ updateFormEntry(e) {
            
         }
         const STORE = this.props.store;
+        const folders = this.props.store.folders.filter(folder => +folder.id === +this.props.match.params.folderId)
+
+
         //const debtFolder = this.props.store.debtFolder
         
         
-        debtFolder.push(newDebt);
-        this.props.history.push('/debt-folders');
+        folders.push(newDebt);
+        this.props.history.push('/folders/');
 
         this.setState({error: null})
     };
 
 
     render() {
+        const folders = this.props.store.folders;
+       
+        const options = folders.map((folder) => {
+            return (
+            <option 
+                key ={folder.id} 
+                id={folder.id}>
+            {folder.name}
+            </option>
+            )
+        })
+
        
         return (
              <>
@@ -149,7 +164,7 @@ updateFormEntry(e) {
                   <input 
                     type="text" 
                     className="field"
-                    name="debt-name" 
+                    name="debtName" 
                     id="debt-name" 
                     aria-label="debt-name"
                     aria-required="true"
@@ -158,24 +173,26 @@ updateFormEntry(e) {
                     />
                 </div>
                 <div className="form-section">
-                  <label htmlFor="debt-folder">Debt Folder</label>
-                  <input 
+                  <label htmlFor="debtFolder">Debt Folder</label>
+                  <select 
                     type="text" 
                     className="field"
-                    name="debt-folder" 
-                    id="debt-folder" 
-                    aria-label="debt-folder"
+                    name="debtFolder" 
+                    id="debtFolder" 
+                    aria-label="folder"
                     aria-required="true"
-                    placeholder="Car Loans"
-                    onChange={e => this.updateFormEntry(e)}
-                    />
+                    ref={this.debtFolder}
+                    onChange={e => this.updateFormEntry(e)}>
+                        <option>Select</option>
+                        { options }
+                    </select>
                 </div>
                 <div className="form-section">
                   <label htmlFor="debt-amount">Debt Amount</label>
                   <input 
                     type="number" 
                     className="field"
-                    name="debt-amount" 
+                    name="debtAmount" 
                     id="debt-amount" 
                     aria-label="debt-amount"
                     aria-required="true"
@@ -188,7 +205,7 @@ updateFormEntry(e) {
                   <input 
                     type="number" 
                     className="field"
-                    name="interest-rate" 
+                    name="interestRate" 
                     id="interest-rate" 
                     aria-label="interest-rate"
                     aria-required="true"

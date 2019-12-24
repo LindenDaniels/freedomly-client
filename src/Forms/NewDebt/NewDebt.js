@@ -10,6 +10,8 @@ import './NewDebt.css';
         debtFolder: "",
         debtAmount: "",
         interestRate: "",
+        folders: "",
+        folderId: "",
         id: "",
         formValid: false,
         debtFolderValid: false,
@@ -122,13 +124,14 @@ updateFormEntry(e) {
            
         }
         const STORE = this.props.store;
-        const folders = this.props.store.folders.filter(folder => +folder.id === +this.props.match.params.folderId)
+        const folders = this.state.folders;
+        const folderId = this.state.folders.id
 
 
         //const debtFolder = this.props.store.debtFolder
         
         
-        folders.push(newDebt);
+        folderId.push(newDebt);
         this.props.history.push('/folders/');
 
         this.setState({error: null})
@@ -136,7 +139,7 @@ updateFormEntry(e) {
 
 
     render() {
-        const folders = this.props.store.folders;
+        const folders = this.props.store.folders
        
         const options = folders.map((folder) => {
             return (

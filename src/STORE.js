@@ -15,10 +15,24 @@ export default {
         {
           id: '2',
           name: 'Car Loans',
+          debts: [ {
+              
+            debtName: 'Sallie Mae',
+            debtAmount: '$3000',
+            debtInterest: '15%'
+        }
+        ]
         },
         {
           id: '3',
           name: 'Credit Cards',
+          debts: [ {
+              
+            debtName: 'Sallie Mae',
+            debtAmount: '$3000',
+            debtInterest: '15%'
+        }
+        ]
         },
         ],
     debtLists: [ 
@@ -26,12 +40,6 @@ export default {
         id: '1',
         name: 'Test'
     },
-],
-    debts: [
-        {
-        id: '1',
-        name: 'test'
-        },
-    ]
+]
 
 }

@@ -31,13 +31,13 @@ export default class DebtList extends Component {
         </header>
       <section className='DebtList'>
         <ul id="debts__list">
-          {folders.map(folder => 
-            <li key={folder.id}>
-                
-                {folder.name}
-                {folder.debts}
-              
-              
+          {folders.debts.map((debt) =>
+          <li>
+          {debt.debtName}
+          {debt.debtAmount}
+          {debt.interestRate}
+          
+          }
             </li>
           )}
         </ul>

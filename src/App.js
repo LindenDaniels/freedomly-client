@@ -65,7 +65,7 @@ class App extends Component {
 
             <Route
               path='/new-debt'
-              render={() => <NewDebt
+              render={(props) => <NewDebt {...props}
                 store={STORE}
               />}
             />

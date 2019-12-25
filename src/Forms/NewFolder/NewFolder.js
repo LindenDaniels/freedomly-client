@@ -114,10 +114,10 @@ updateFormEntry(e) {
            
         }
         const STORE = this.props.store;
-        const folderList = this.props.store.folderList
+        const folders = this.props.store.folders
         
         
-        folderList.push(folder);
+        folders.push(folder);
         this.props.history.push('/folder-list');
 
         this.setState({error: null})

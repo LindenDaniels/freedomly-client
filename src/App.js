@@ -46,7 +46,7 @@ class App extends Component {
 
             <Route
               path='/new-debt-list'
-              render={() => <NewDebtList
+              render={(props) => <NewDebtList {...props}
                 store={STORE}
               />}
             />

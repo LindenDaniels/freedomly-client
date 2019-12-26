@@ -127,7 +127,7 @@ updateFormEntry(e) {
         }
         const STORE = this.props.store;
         const folderId = this.state.folderId
-        console.log(folderId)
+       
         const folder = this.props.store.folders.find(folder => +folder.id === +folderId)        
 
 

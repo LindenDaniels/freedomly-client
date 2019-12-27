@@ -39,6 +39,12 @@ export default class DebtList extends Component {
                                     {debt.debtName}
                                     {debt.debtAmount}
                                     {debt.interestRate}
+                                    {debt.debtName2}
+                                    {debt.debtAmount2}
+                                    {debt.interestRate2}
+                                    {debt.debtName3}
+                                    {debt.debtAmount3}
+                                    {debt.interestRate3}
 
 
                                 </li>

@@ -148,6 +148,7 @@ updateFormEntry(e) {
         
         
         folder.debts.push(newDebtList);
+        console.log(folder.debts)
         this.props.history.push('/folder-list/');
 
         this.setState({error: null})

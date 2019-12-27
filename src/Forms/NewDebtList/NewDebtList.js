@@ -141,14 +141,16 @@ updateFormEntry(e) {
         const STORE = this.props.store;
         const folderId = this.state.folderId
        
-        const folder = this.props.store.folders.find(folder => +folder.id === +folderId)        
+        const folder = this.props.store.folders.find(folder => +folder.id === +folderId)
+        const folderUrl = `/folder/${forlderId}`        
 
 
         //const debtFolder = this.props.store.debtFolder
         
         
         folder.debts.push(newDebtList);
-        this.props.history.push('/folder-list/');
+        
+        this.props.history.push(folderUrl);
 
         this.setState({error: null})
     };

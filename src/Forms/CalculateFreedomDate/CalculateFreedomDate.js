@@ -126,6 +126,18 @@ updateFormEntry(e) {
 
 
     render() {
+        const folders = this.props.store.folders
+
+        const options = folders.map((folder) => {
+            return (
+                <option
+                    key={folder.id}
+                    id={folder.id}>
+                    {folder.name}
+                </option>
+            )
+        })
+
        
         return (
              <>
@@ -139,16 +151,20 @@ updateFormEntry(e) {
                 <h2 className="title">Calculate Freedom Date</h2>
                 <div className="form-section">
                   <label htmlFor="debt-lists">Select Debt Lists to Include</label>
-                  <input 
-                    type="text" 
-                    className="field"
-                    name="debt-lists" 
-                    id="debt-lists" 
-                    aria-label="debt-lists"
-                    aria-required="true"
-                    placeholder="Student Loans"
-                    onChange={e => this.updateFormEntry(e)}
-                    />
+                  <input
+                                type="checkbox"
+                                className="field"
+                                name="debtFolder"
+                                value={options}
+                                id="debtFolder"
+                                aria-label="folder"
+                                aria-required="true"
+                                ref={this.debtFolder}
+                                onChange={e => this.updateFormEntry(e)}>
+                             
+                    </input>
+                    {options}  
+                    
                 </div>
                 <div className="form-section">
                   <label htmlFor="monthly-payment">Monthly Payment</label>

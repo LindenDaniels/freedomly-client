@@ -16,20 +16,16 @@ export default class DebtList extends Component {
         }
     }
 
-    //static contextType = GroceryContext;
 
     render() {
-        //const { recipe =[] } = this.context
-        //const notesForFolder = getNotesForFolder(notes, folderId)
 
-        //const folders = this.props.store.folders
         const folders = this.props.store.folders.filter(folder => +folder.id === +this.props.match.params.folderId)
-        
+        //const folderName = this.props.store.folders.name.filter(folder => +folder.name === +this.props.match.params.folderName)
         return (
 
             <>
                 <header>
-                    <h1>Debt List</h1>
+                    <h1></h1>
                 </header>
                 <section className='DebtList'>
                     <ul id="debts__list">

@@ -13,8 +13,26 @@ import './CalculateFreedomDate.css';
         formValid: false,
         debtListsValid: false,
         monthlyPaymentValid: false,
-        validationMessage: null
+        validationMessage: null,
+        /*checkboxes: OPTIONS.reduce(
+            (options, option) => ({
+              ...options,
+              [option]: false
+            }),
+        {}
+        )*/
     }
+
+    handleCheckboxChange = changeEvent => {
+        const { name } = changeEvent.target;
+    
+        this.setState(prevState => ({
+          checkboxes: {
+            ...prevState.checkboxes,
+            [name]: !prevState.checkboxes[name]
+          }
+        }));
+      };
 
 updateFormEntry(e) {       
         const name = e.target.name;
@@ -128,15 +146,16 @@ updateFormEntry(e) {
     render() {
         const folders = this.props.store.folders
 
-        const options = folders.map((folder) => {
+       /*const options = folders.map((folder) => {
             return (
                 <option
                     key={folder.id}
                     id={folder.id}>
                     {folder.name}
                 </option>
-            )
-        })
+            
+        })*/
+        
 
        
         return (
@@ -155,7 +174,7 @@ updateFormEntry(e) {
                                 type="checkbox"
                                 className="field"
                                 name="debtFolder"
-                                value={options}
+                                /*value={options}*/
                                 id="debtFolder"
                                 aria-label="folder"
                                 aria-required="true"
@@ -163,7 +182,7 @@ updateFormEntry(e) {
                                 onChange={e => this.updateFormEntry(e)}>
                              
                     </input>
-                    {options}  
+                    
                     
                 </div>
                 <div className="form-section">

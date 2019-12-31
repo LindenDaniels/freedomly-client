@@ -37,12 +37,7 @@ class App extends Component {
                 store={STORE}
               />}
             />
-            <Route
-              path='/freedom-date'
-              render={() => <FreedomDate
-                store={STORE}
-              />}
-            />
+           
 
             <Route
               path='/new-debt-list'
@@ -56,13 +51,7 @@ class App extends Component {
                 store={STORE}
               />}
             />
-            <Route
-              path='/new-freedom-date'
-              render={() => <CalculateFreedomDate
-                store={STORE}
-              />}
-            />
-
+          
             <Route
               path='/new-debt'
               render={(props) => <NewDebt {...props}

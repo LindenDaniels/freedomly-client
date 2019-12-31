@@ -17,11 +17,7 @@ export default class NavBar extends Component {
                     Home
             </NavLink>
           
-            <NavLink
-              className='nav-link'
-              to='/freedom-date'>
-                Freedom Date
-            </NavLink>
+         
             <NavLink
                className='nav-link'
                to='/folder-list'>
@@ -37,11 +33,7 @@ export default class NavBar extends Component {
                to='/new-debt-list'>
                    New Debt List
             </NavLink>
-            <NavLink
-               className='nav-link'
-               to='/new-freedom-date'>
-                   New Freedom Date
-            </NavLink>
+            
             <NavLink
                className='nav-link'
                to='/new-folder'>
